@@ -20,3 +20,6 @@ print(terminal_fns)
 vim.keymap.set({'n', 'v'}, '<leader>t', terminal_fns.toggle_terminal)
 vim.keymap.set({'n', 'v'}, '<leader>T', terminal_fns.new_terminal)
 vim.keymap.set('t', '<esc>', '<c-\\><c-n>')
+
+-- Lazy git
+vim.keymap.set({'n', 'v'}, '<leader>g', terminal_fns.lazy_git)
