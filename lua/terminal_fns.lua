@@ -51,7 +51,7 @@ function lazy_git()
   vim.cmd("startinsert")
 end
 
--- Do any keystroke to kill the window
+-- Kill the window when a terminal closes
 vim.cmd("au TermClose * bd")
 
 return {
