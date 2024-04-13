@@ -46,7 +46,11 @@ function toggle_terminal()
 end
 
 function lazy_git()
-  vim.cmd.terminal("lazygit")
+  local current_buffer = vim.fn.bufnr()
+
+  vim.cmd.enew()
+  vim.fn.termopen("bash -c lazygit", {on_exit=function() vim.cmd.buffer(current_buffer) end})
+
   vim.keymap.set("t","<esc>", "<esc>", {buffer=true})
   vim.cmd("startinsert")
 end
