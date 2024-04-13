@@ -4,6 +4,7 @@
   "fzf-lua": { "branch": "main", "commit": "36df11e3bbb6453014ff4736f6805b5a91dda56d" },
   "kanagawa": { "branch": "master", "commit": "bfa818c7bf6259152f1d89cf9fbfba3554c93695" },
   "lazy.nvim": { "branch": "main", "commit": "31ddbea7c10b6920c9077b66c97951ca8682d5c8" },
+  "nvim-tree": { "branch": "master", "commit": "81eb8d519233c105f30dc0a278607e62b20502fd" },
   "nvim-treesitter": { "branch": "master", "commit": "ef267f0c285928ea3a0d3362a260a0728fd4a146" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "c180aef9a197e9fe64cc285171910b8ea1400952" },
   "nvim-web-devicons": { "branch": "master", "commit": "6e355632387a085f15a66ad68cf681c1d7374a04" },

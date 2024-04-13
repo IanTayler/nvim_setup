@@ -27,6 +27,7 @@ plugins = {
   { "folke/tokyonight.nvim", name = "tokyonight", lazy=true },
   { "nvim-treesitter/nvim-treesitter", name = "nvim-treesitter", build = ":TSUpdate"},
   { "nvim-treesitter/nvim-treesitter-textobjects", name = "nvim-treesitter-textobjects", dependencies = {"nvim-treesitter/nvim-treesitter"}},
+  { "nvim-tree/nvim-tree.lua", name = "nvim-tree"},
 
 }
 
@@ -34,6 +35,7 @@ plugins = {
 require("lazy").setup(plugins, {})
 
 -- Plugin configurations
+require("nvim-tree").setup()
 require("plugins/treesitter")
 
 -- Load other configuration files

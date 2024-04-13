@@ -23,3 +23,6 @@ vim.keymap.set('t', '<esc>', '<c-\\><c-n>')
 
 -- Lazy git
 vim.keymap.set({'n', 'v'}, '<leader>g', terminal_fns.lazy_git)
+
+-- Nvim Tree
+vim.keymap.set({'n', 'v'}, '<leader>e', ":NvimTreeToggle<CR>")
