@@ -13,5 +13,10 @@ vim.keymap.set({'n', 'v'}, '<leader>fw', ':FzfLua live_grep<CR>')
 -- Custom movement (also see treesitter plugin config)
 vim.keymap.set({'n', 'v'}, '<leader>w', '<c-w>')
 
--- Terminal and other cool side-launches
-vim.keymap.set({'n', 'v'}, '<leader>t', '<c-w>s<c-w>j:terminal<CR>a')
+-- Terminal
+local terminal_fns = require("terminal_fns")
+
+print(terminal_fns)
+vim.keymap.set({'n', 'v'}, '<leader>t', terminal_fns.toggle_terminal)
+vim.keymap.set({'n', 'v'}, '<leader>T', terminal_fns.new_terminal)
+vim.keymap.set('t', '<esc>', '<c-\\><c-n>')
