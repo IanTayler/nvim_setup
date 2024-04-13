@@ -47,6 +47,7 @@ end
 
 function lazy_git()
   vim.cmd.terminal("lazygit")
+  vim.keymap.set("t","<esc>", "<esc>", {buffer=true})
   vim.cmd("startinsert")
 end
 
