@@ -24,7 +24,7 @@ local function toggle_terminal()
     return
   end
 
-  for i, buf_hndl in ipairs(vim.api.nvim_list_bufs()) do
+  for _, buf_hndl in ipairs(vim.api.nvim_list_bufs()) do
     local name = vim.api.nvim_buf_get_name(buf_hndl)
 
     if is_term_bufname(name) and vim.api.nvim_buf_is_loaded(buf_hndl) then
