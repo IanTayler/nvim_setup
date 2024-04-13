@@ -13,6 +13,17 @@ vim.keymap.set({'n', 'v'}, '<leader>fw', ':FzfLua live_grep<CR>')
 -- Custom movement (also see treesitter plugin config)
 vim.keymap.set({'n', 'v'}, '<leader>w', '<c-w>')
 
+-- Lsp stuff
+vim.keymap.set({'n', 'v'}, '<leader>ld', vim.lsp.buf.definition, {desc = "go to definition"})
+vim.keymap.set({'n', 'v'}, '<leader>lD', vim.lsp.buf.declaration)
+vim.keymap.set({'n', 'v'}, '<leader>li', vim.lsp.buf.implementation)
+vim.keymap.set({'n', 'v'}, '<leader>ls', vim.lsp.buf.document_symbol)
+vim.keymap.set({'n', 'v'}, '<leader>lf', vim.lsp.buf.format)
+vim.keymap.set({'n', 'v'}, '<leader>lk', vim.lsp.buf.hover)
+vim.keymap.set({'n', 'v'}, '<leader>lr', vim.lsp.buf.rename)
+vim.keymap.set({'n', 'v'}, '<leader>lw', vim.lsp.buf.workspace_symbol)
+
+
 -- Terminal
 local terminal_fns = require("terminal_fns")
 

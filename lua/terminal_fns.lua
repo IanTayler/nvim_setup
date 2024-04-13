@@ -1,22 +1,22 @@
 local term_prefix = "term://"
 
-function is_term_bufname(name)
+local function is_term_bufname(name)
   return name:sub(1, #term_prefix) == term_prefix
 end
 
 
-function in_bottom_split(fn)
+local function in_bottom_split(fn)
   vim.cmd("split")
   vim.cmd.wincmd("j")
   fn()
   vim.cmd("startinsert")
 end
 
-function new_terminal()
+local function new_terminal()
   in_bottom_split(vim.cmd.terminal)
 end
 
-function toggle_terminal()
+local function toggle_terminal()
   local current_buf = vim.api.nvim_buf_get_name(0)
 
   if is_term_bufname(current_buf) then
@@ -41,7 +41,7 @@ function toggle_terminal()
   new_terminal()
 end
 
-function lazy_git()
+local function lazy_git()
   local current_buffer = vim.fn.bufnr()
 
   vim.cmd.enew()
