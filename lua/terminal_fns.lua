@@ -12,10 +12,6 @@ function in_bottom_split(fn)
   vim.cmd("startinsert")
 end
 
-function close_window()
-  win.cmd.wincmd('c')
-end
-
 function new_terminal()
   in_bottom_split(vim.cmd.terminal)
 end
