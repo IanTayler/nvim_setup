@@ -27,6 +27,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
     if client.server_capabilities.definitionProvider then
       vim.bo[bufnr].tagfunc = "v:lua.vim.lsp.tagfunc"
+      vim.keymap.set({ "n", "v" }, "gd", vim.lsp.buf.definition, { desc = "go to definition" })
+    end
+
+    if client.server_capabilities.declarationProvider then
+      vim.keymap.set({ "n", "v" }, "gD", vim.lsp.buf.declaration, { desc = "go to declaration" })
     end
 
     if client.server_capabilities.hoverProvider then
