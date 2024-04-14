@@ -8,10 +8,10 @@ vim.keymap.set({ 'n', 'v' }, ':', ';')
 vim.keymap.set({ 'n', 'v' }, '<esc>', ':noh<esc>')
 
 -- Launch useful searches with <leader>
-vim.keymap.set({ 'n', 'v' }, '<leader>ff', ':FzfLua files<CR>')
-vim.keymap.set({ 'n', 'v' }, '<leader><leader>', ':FzfLua files<CR>')
-vim.keymap.set({ 'n', 'v' }, '<leader>fb', ':FzfLua buffers<CR>')
-vim.keymap.set({ 'n', 'v' }, '<leader>fw', ':FzfLua live_grep<CR>')
+vim.keymap.set({ 'n', 'v' }, '<leader>ff', ':FzfLua files<CR>', { desc = "search files in project" })
+vim.keymap.set({ 'n', 'v' }, '<leader><leader>', ':FzfLua files<CR>', { desc = "search files in project" })
+vim.keymap.set({ 'n', 'v' }, '<leader>fb', ':FzfLua buffers<CR>', { desc = "search open buffers" })
+vim.keymap.set({ 'n', 'v' }, '<leader>fw', ':FzfLua live_grep<CR>', { desc = "search text in project files" })
 
 -- Custom movement (also see treesitter plugin config)
 vim.keymap.set({ 'n', 'v' }, '<leader>w', '<c-w>')
@@ -50,12 +50,12 @@ vim.keymap.set({ 'n', 'v' }, '<leader>lr', vim.lsp.buf.rename, { desc = "rename 
 local terminal_fns = require("terminal_fns")
 
 print(terminal_fns)
-vim.keymap.set({ 'n', 'v' }, '<leader>t', terminal_fns.toggle_terminal)
-vim.keymap.set({ 'n', 'v' }, '<leader>T', terminal_fns.new_terminal)
+vim.keymap.set({ 'n', 'v' }, '<leader>t', terminal_fns.toggle_terminal, { desc = "toggle terminal" })
+vim.keymap.set({ 'n', 'v' }, '<leader>T', terminal_fns.new_terminal, { desc = "new terminal" })
 vim.keymap.set('t', '<esc>', '<c-\\><c-n>')
 
 -- Lazy git
-vim.keymap.set({ 'n', 'v' }, '<leader>g', terminal_fns.lazy_git)
+vim.keymap.set({ 'n', 'v' }, '<leader>g', terminal_fns.lazy_git, { desc = "open lazygit" })
 
 -- Nvim Tree
 vim.keymap.set({ 'n', 'v' }, '<leader>e', ":NvimTreeToggle<CR>")
