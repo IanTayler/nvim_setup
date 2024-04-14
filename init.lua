@@ -3,6 +3,7 @@ vim.opt.termguicolors = true
 
 -- General settings
 vim.opt.clipboard = "unnamedplus"
+vim.opt.signcolumn = "no"
 
 -- Lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
