@@ -4,6 +4,9 @@ vim.g.mapleader = " "
 vim.keymap.set({ 'n', 'v' }, ';', ':')
 vim.keymap.set({ 'n', 'v' }, ':', ';')
 
+-- Minor improvements to normal behaviour
+vim.keymap.set({ 'n', 'v' }, '<esc>', ':noh<esc>')
+
 -- Launch useful searches with <leader>
 vim.keymap.set({ 'n', 'v' }, '<leader>ff', ':FzfLua files<CR>')
 vim.keymap.set({ 'n', 'v' }, '<leader><leader>', ':FzfLua files<CR>')
