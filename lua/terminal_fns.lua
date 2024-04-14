@@ -6,13 +6,17 @@ end
 
 
 local function in_bottom_split(fn)
-  vim.cmd("botright split")
+  vim.cmd("botright new")
   fn()
   vim.cmd("startinsert")
 end
 
+local function load_terminal()
+  vim.fn.termopen(vim.o.shell, { on_exit = function() vim.cmd.bd() end })
+end
+
 local function new_terminal()
-  in_bottom_split(vim.cmd.terminal)
+  in_bottom_split(load_terminal)
 end
 
 local function toggle_terminal()
@@ -41,18 +45,20 @@ local function toggle_terminal()
   new_terminal()
 end
 
+local function delete_and_switch(new_buffer)
+  local buffer_to_delete = vim.fn.bufnr()
+  vim.cmd.buffer(new_buffer)
+  vim.cmd.bdelete(buffer_to_delete)
+end
 local function lazy_git()
-  local current_buffer = vim.fn.bufnr()
+  local previous_buffer = vim.fn.bufnr()
 
   vim.cmd.enew()
-  vim.fn.termopen("lazygit", { on_exit = function() vim.cmd.buffer(current_buffer) end })
+  vim.fn.termopen("lazygit", { on_exit = function() delete_and_switch(previous_buffer) end })
 
   vim.keymap.set("t", "<esc>", "<esc>", { buffer = true })
   vim.cmd("startinsert")
 end
-
--- Kill the window when a terminal closes
-vim.cmd("au TermClose * bd")
 
 return {
   new_terminal = new_terminal,
