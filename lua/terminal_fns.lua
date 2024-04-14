@@ -6,8 +6,7 @@ end
 
 
 local function in_bottom_split(fn)
-  vim.cmd("split")
-  vim.cmd.wincmd("j")
+  vim.cmd("botright split")
   fn()
   vim.cmd("startinsert")
 end
@@ -31,6 +30,7 @@ local function toggle_terminal()
       local window = vim.fn.bufwinid(buf_hndl)
       if window > 0 then
         vim.api.nvim_set_current_win(window)
+        vim.cmd("startinsert")
         return
       else
         in_bottom_split(function() vim.cmd.buffer(buf_hndl) end)
