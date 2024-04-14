@@ -41,9 +41,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 -- General lsp stuff
-vim.keymap.set({ 'n', 'v' }, '<leader>gd', vim.lsp.buf.definition, { desc = "go to definition" })
-vim.keymap.set({ 'n', 'v' }, '<leader>gD', vim.lsp.buf.declaration, { desc = "go to declaration" })
-vim.keymap.set({ 'n', 'v' }, '<leader>gi', vim.lsp.buf.implementation, { desc = "go to implementation(s)" })
+vim.keymap.set({ 'n', 'v' }, '<leader>li', vim.lsp.buf.implementation, { desc = "go to implementation(s)" })
 vim.keymap.set({ 'n', 'v' }, '<leader>ls', vim.lsp.buf.document_symbol, { desc = "show symbols in document" })
 vim.keymap.set({ 'n', 'v' }, '<leader>lS', vim.lsp.buf.workspace_symbol, { desc = "show symbols in workspace" })
 vim.keymap.set({ 'n', 'v' }, '<leader>lf', vim.lsp.buf.format, { desc = "format buffer" })

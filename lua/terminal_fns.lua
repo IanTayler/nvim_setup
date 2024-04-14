@@ -45,9 +45,9 @@ local function lazy_git()
   local current_buffer = vim.fn.bufnr()
 
   vim.cmd.enew()
-  vim.fn.termopen("bash -c lazygit", {on_exit=function() vim.cmd.buffer(current_buffer) end})
+  vim.fn.termopen("lazygit", { on_exit = function() vim.cmd.buffer(current_buffer) end })
 
-  vim.keymap.set("t","<esc>", "<esc>", {buffer=true})
+  vim.keymap.set("t", "<esc>", "<esc>", { buffer = true })
   vim.cmd("startinsert")
 end
 
