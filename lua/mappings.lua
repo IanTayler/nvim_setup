@@ -5,7 +5,7 @@ vim.keymap.set({ 'n', 'v' }, ';', ':')
 vim.keymap.set({ 'n', 'v' }, ':', ';')
 
 -- Minor improvements to normal behaviour
-vim.keymap.set({ 'n', 'v' }, '<esc>', ':noh<esc>')
+vim.keymap.set('n', '<esc>', ':noh<CR><esc>')
 
 -- Launch useful searches with <leader>
 vim.keymap.set({ 'n', 'v' }, '<leader>ff', ':FzfLua files<CR>', { desc = "search files in project" })
