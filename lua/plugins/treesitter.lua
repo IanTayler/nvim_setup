@@ -1,5 +1,5 @@
 require('nvim-treesitter.configs').setup {
-  ensure_installed = {"c", "cpp", "go", "haskell", "rust", "lua", "vim", "vimdoc", "python", "query"},
+  ensure_installed = { "c", "cpp", "go", "haskell", "rust", "lua", "vim", "vimdoc", "python", "query" },
   highlight = {
     enable = true,
   },
@@ -45,6 +45,20 @@ require('nvim-treesitter.configs').setup {
       goto_previous = {
         ["[d"] = "@conditional.outer",
       }
+    },
+    select = {
+      enable = true,
+
+      keymaps = {
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
+        ["ic"] = "@class.inner",
+        ["ab"] = "@block.outer",
+        ["ib"] = "@block.inner",
+        ["ai"] = "@conditional.outer",
+        ["ii"] = "@conditional.inner",
+      },
     },
   },
 }
