@@ -32,7 +32,8 @@ local plugins = {
 
   { "nvim-tree/nvim-tree.lua", name = "nvim-tree"},
   { "neovim/nvim-lspconfig", name = "nvim-lspconfig"},
-  { "folke/neodev.nvim", name="neodev", opts = {} }
+  { "folke/neodev.nvim", name="neodev", opts = {} },
+  { 'numToStr/Comment.nvim', lazy=false };
 }
 
 
@@ -43,6 +44,8 @@ require("nvim-tree").setup()
 require("plugins/treesitter")
 
 require("plugins/lspconfig")
+
+require("Comment").setup()
 
 -- Load other configuration files
 
