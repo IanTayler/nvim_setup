@@ -34,6 +34,7 @@ local plugins = {
   { "neovim/nvim-lspconfig", name = "nvim-lspconfig"},
   { "folke/neodev.nvim", name="neodev", opts = {} },
   { 'numToStr/Comment.nvim', lazy=false };
+  { 'tpope/vim-fugitive', name="fugitive", lazy=false };
 }
 
 

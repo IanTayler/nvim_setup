@@ -1,5 +1,5 @@
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { "c", "cpp", "go", "haskell", "rust", "lua", "vim", "vimdoc", "python", "query" },
+  ensure_installed = { "c", "cpp", "go", "haskell", "rust", "lua", "vim", "vimdoc", "python", "query", "comment" },
   highlight = {
     enable = true,
   },
@@ -62,3 +62,6 @@ require('nvim-treesitter.configs').setup {
     },
   },
 }
+
+-- Add special highlighting
+vim.api.nvim_set_hl(0, "@comment.todo.comment", { link = "Todo" })
