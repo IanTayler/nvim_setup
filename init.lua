@@ -1,8 +1,20 @@
 -- Aesthetic considerations
 vim.opt.termguicolors = true
 
--- General settings
-vim.opt.clipboard = "unnamedplus"
+-- Clipboard that works through ssh
+vim.g.clipboard = {
+  name = 'OSC 52',
+  copy = {
+    ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+  },
+  paste = {
+    ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+  },
+}
+
+-- Other reasonable general settings
 vim.opt.signcolumn = "no"
 
 -- Lazy.nvim
