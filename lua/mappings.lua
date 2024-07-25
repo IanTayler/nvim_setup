@@ -16,6 +16,13 @@ vim.keymap.set({ 'n', 'v' }, '<leader>fw', ':FzfLua live_grep<CR>', { desc = "se
 -- Custom movement (also see treesitter plugin config)
 vim.keymap.set({ 'n', 'v' }, '<leader>w', '<c-w>')
 
+-- Diagnostic windows
+vim.keymap.set({'n', 'v'}, '<leader>o', vim.diagnostic.open_float)
+
+-- Folding
+vim.keymap.set({'n', 'v'}, '<leader>ds', ":set foldmethod=syntax<CR>")
+vim.keymap.set({'n', 'v'}, '<leader>di', ":set foldmethod=indent<CR>")
+
 -- Lsp-only overrides
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
