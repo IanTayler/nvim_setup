@@ -70,3 +70,6 @@ vim.keymap.set({ 'n', 'v' }, '<leader>g', terminal_fns.lazy_git, { desc = "open 
 
 -- Nvim Tree
 vim.keymap.set({ 'n', 'v' }, '<leader>e', ":NvimTreeToggle<CR>")
+
+-- Presentations
+vim.api.nvim_create_user_command('Litmus', require('litmus').load_litmus, { nargs = 1 })
