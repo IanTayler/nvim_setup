@@ -1,6 +1,3 @@
--- Aesthetic considerations
-vim.opt.termguicolors = true
-
 -- Clipboard that works through ssh
 vim.g.clipboard = {
   name = 'OSC 52',
@@ -45,8 +42,10 @@ local plugins = {
   { "nvim-tree/nvim-tree.lua", name = "nvim-tree"},
   { "neovim/nvim-lspconfig", name = "nvim-lspconfig"},
   { "folke/neodev.nvim", name="neodev", opts = {} },
-  { 'numToStr/Comment.nvim', lazy=false };
-  { 'tpope/vim-fugitive', name="fugitive", lazy=false };
+  { "numToStr/Comment.nvim", lazy=false },
+  { "tpope/vim-fugitive", name="fugitive", lazy=false },
+  { "keith/llvm.vim", name="llvm", lazy=false },
+
 }
 
 
